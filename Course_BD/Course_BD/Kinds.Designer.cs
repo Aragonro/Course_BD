@@ -35,22 +35,24 @@
             this.textBox_add = new System.Windows.Forms.TextBox();
             this.button_add_kind = new System.Windows.Forms.Button();
             this.button_add_cell = new System.Windows.Forms.Button();
-            this.textBox_add_kind = new System.Windows.Forms.TextBox();
-            this.textBox_add_cell = new System.Windows.Forms.TextBox();
             this.button_del_k = new System.Windows.Forms.Button();
             this.button_del_c = new System.Windows.Forms.Button();
             this.button_del = new System.Windows.Forms.Button();
+            this.textBox_add_kind = new System.Windows.Forms.ComboBox();
+            this.textBox_add_cell = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox_kinds
             // 
+            this.comboBox_kinds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_kinds.FormattingEnabled = true;
             this.comboBox_kinds.Location = new System.Drawing.Point(83, 12);
             this.comboBox_kinds.Name = "comboBox_kinds";
             this.comboBox_kinds.Size = new System.Drawing.Size(121, 21);
             this.comboBox_kinds.TabIndex = 0;
+            this.comboBox_kinds.SelectedIndexChanged += new System.EventHandler(this.comboBox_kinds_SelectedIndexChanged);
             this.comboBox_kinds.TextChanged += new System.EventHandler(this.comboBox_kinds_TextChanged);
             // 
             // dataGridView1
@@ -106,20 +108,6 @@
             this.button_add_cell.UseVisualStyleBackColor = true;
             this.button_add_cell.Click += new System.EventHandler(this.button_add_cell_Click);
             // 
-            // textBox_add_kind
-            // 
-            this.textBox_add_kind.Location = new System.Drawing.Point(12, 250);
-            this.textBox_add_kind.Name = "textBox_add_kind";
-            this.textBox_add_kind.Size = new System.Drawing.Size(133, 20);
-            this.textBox_add_kind.TabIndex = 7;
-            // 
-            // textBox_add_cell
-            // 
-            this.textBox_add_cell.Location = new System.Drawing.Point(151, 253);
-            this.textBox_add_cell.Name = "textBox_add_cell";
-            this.textBox_add_cell.Size = new System.Drawing.Size(132, 20);
-            this.textBox_add_cell.TabIndex = 8;
-            // 
             // button_del_k
             // 
             this.button_del_k.Location = new System.Drawing.Point(13, 205);
@@ -149,16 +137,32 @@
             this.button_del.Text = "Удалить вид";
             this.button_del.UseVisualStyleBackColor = true;
             // 
+            // textBox_add_kind
+            // 
+            this.textBox_add_kind.FormattingEnabled = true;
+            this.textBox_add_kind.Location = new System.Drawing.Point(13, 253);
+            this.textBox_add_kind.Name = "textBox_add_kind";
+            this.textBox_add_kind.Size = new System.Drawing.Size(132, 21);
+            this.textBox_add_kind.TabIndex = 7;
+            // 
+            // textBox_add_cell
+            // 
+            this.textBox_add_cell.FormattingEnabled = true;
+            this.textBox_add_cell.Location = new System.Drawing.Point(151, 253);
+            this.textBox_add_cell.Name = "textBox_add_cell";
+            this.textBox_add_cell.Size = new System.Drawing.Size(132, 21);
+            this.textBox_add_cell.TabIndex = 8;
+            // 
             // Kinds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(306, 466);
+            this.Controls.Add(this.textBox_add_cell);
+            this.Controls.Add(this.textBox_add_kind);
             this.Controls.Add(this.button_del);
             this.Controls.Add(this.button_del_c);
             this.Controls.Add(this.button_del_k);
-            this.Controls.Add(this.textBox_add_cell);
-            this.Controls.Add(this.textBox_add_kind);
             this.Controls.Add(this.button_add_cell);
             this.Controls.Add(this.button_add_kind);
             this.Controls.Add(this.textBox_add);
@@ -168,7 +172,7 @@
             this.Controls.Add(this.comboBox_kinds);
             this.Name = "Kinds";
             this.ShowInTaskbar = false;
-            this.Text = "Kinds";
+            this.Text = "Виды";
             this.Load += new System.EventHandler(this.Kinds_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -186,10 +190,10 @@
         private System.Windows.Forms.TextBox textBox_add;
         private System.Windows.Forms.Button button_add_kind;
         private System.Windows.Forms.Button button_add_cell;
-        private System.Windows.Forms.TextBox textBox_add_kind;
-        private System.Windows.Forms.TextBox textBox_add_cell;
         private System.Windows.Forms.Button button_del_k;
         private System.Windows.Forms.Button button_del_c;
         private System.Windows.Forms.Button button_del;
+        private System.Windows.Forms.ComboBox textBox_add_kind;
+        private System.Windows.Forms.ComboBox textBox_add_cell;
     }
 }

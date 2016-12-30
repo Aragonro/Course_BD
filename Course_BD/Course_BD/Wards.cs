@@ -67,6 +67,10 @@ namespace Course_BD
         {
             try
             {
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                string zapros;
+                SqlDataAdapter oda;
+                DataTable dt = new DataTable();
                 if (cur_row != dataGridView1.CurrentRow.Index && dataGridView1.CurrentRow.Index != dataGridView1.Rows.Count - 1)
                 {
                     cur_row = dataGridView1.CurrentRow.Index;
@@ -81,11 +85,10 @@ namespace Course_BD
                     textBox_works.Text = Convert.ToString(dataGridView1[7, cur_row].Value);
                     textBox_workf.Text = Convert.ToString(dataGridView1[8, cur_row].Value);
 
-                    SqlConnection sqlconn = new SqlConnection(ConnectionString);
                     sqlconn.Open();
-                    string zapros = "Select Id_cell AS 'Номер клетки', 'Количество животных в клетке' = (Select Count(Animals.Id) From Animals Where Number_Cell=Id_cell), Duties As 'Обязоности' From cells_wards Where Id_ward=" + cur_index + " Group By Id_cell, Duties";
-                    SqlDataAdapter oda = new SqlDataAdapter(zapros, sqlconn);
-                    DataTable dt = new DataTable();
+                     zapros = "Select Id_cell AS 'Номер клетки', 'Количество животных в клетке' = (Select Count(Animals.Id) From Animals Where Number_Cell=Id_cell), Duties As 'Обязоности' From cells_wards Where Id_ward=" + cur_index + " Group By Id_cell, Duties";
+                    oda = new SqlDataAdapter(zapros, sqlconn);
+                    dt = new DataTable();
 
                     oda.Fill(dt);
                     dataGridView2.DataSource = dt;
@@ -103,6 +106,22 @@ namespace Course_BD
 
                     sqlconn.Close();
                 }
+                sqlconn.Open();
+                
+                zapros = "Select Distinct Post From Wards ;";
+                oda = new SqlDataAdapter(zapros, sqlconn);
+                dt = new DataTable();
+
+                oda.Fill(dt);
+                textBox_post.Items.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    textBox_post.Items.Add(dt.Rows[i]["Post"]);
+                }
+
+
+                sqlconn.Close();
+
             }
             catch (Exception ex)
             {
@@ -187,7 +206,7 @@ namespace Course_BD
                     sqlconn.Open();
                 SqlCommand command = new SqlCommand(sql, sqlconn);
                 int x = command.ExecuteNonQuery();
-                sql = "DELETE From Wards Where Id=" + cur_index + ";";
+                sql = "Update Wards Set Work_Finish='" + DateTime.Now.ToShortDateString() + "' Where Id=" + cur_index + ";";
                 if (sqlconn.State != ConnectionState.Open)
                     sqlconn.Open();
                 command = new SqlCommand(sql, sqlconn);

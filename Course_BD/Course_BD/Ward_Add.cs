@@ -19,6 +19,20 @@ namespace Course_BD
         public Ward_Add()
         {
             InitializeComponent();
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string zapros = "Select Distinct Post From Wards ;";
+            SqlDataAdapter oda = new SqlDataAdapter(zapros, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            textBox_post.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                textBox_post.Items.Add(dt.Rows[i]["Post"]);
+            }
+
+
+            sqlconn.Close();
         }
 
         private void button_OK_Click(object sender, EventArgs e)

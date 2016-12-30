@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.textBox_S = new System.Windows.Forms.TextBox();
-            this.textBox_Kind = new System.Windows.Forms.TextBox();
             this.button_change = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.comboBox_filtr = new System.Windows.Forms.ComboBox();
             this.textBox_filtr = new System.Windows.Forms.TextBox();
             this.button_filtr = new System.Windows.Forms.Button();
+            this.textBox_Kind = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -102,13 +102,6 @@
             this.textBox_S.Name = "textBox_S";
             this.textBox_S.Size = new System.Drawing.Size(100, 20);
             this.textBox_S.TabIndex = 6;
-            // 
-            // textBox_Kind
-            // 
-            this.textBox_Kind.Location = new System.Drawing.Point(519, 100);
-            this.textBox_Kind.Name = "textBox_Kind";
-            this.textBox_Kind.Size = new System.Drawing.Size(100, 20);
-            this.textBox_Kind.TabIndex = 7;
             // 
             // button_change
             // 
@@ -226,11 +219,20 @@
             this.button_filtr.UseVisualStyleBackColor = true;
             this.button_filtr.Click += new System.EventHandler(this.button_filtr_Click);
             // 
+            // textBox_Kind
+            // 
+            this.textBox_Kind.FormattingEnabled = true;
+            this.textBox_Kind.Location = new System.Drawing.Point(519, 99);
+            this.textBox_Kind.Name = "textBox_Kind";
+            this.textBox_Kind.Size = new System.Drawing.Size(100, 21);
+            this.textBox_Kind.TabIndex = 7;
+            // 
             // Cells
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 562);
+            this.Controls.Add(this.textBox_Kind);
             this.Controls.Add(this.button_filtr);
             this.Controls.Add(this.textBox_filtr);
             this.Controls.Add(this.comboBox_filtr);
@@ -243,7 +245,6 @@
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.button_change);
-            this.Controls.Add(this.textBox_Kind);
             this.Controls.Add(this.textBox_S);
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.label3);
@@ -251,7 +252,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Cells";
-            this.Text = "Cells";
+            this.Text = "Клетки";
             this.Activated += new System.EventHandler(this.Cells_Activated);
             this.Load += new System.EventHandler(this.Cells_Load);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Cells_MouseUp);
@@ -271,7 +272,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.TextBox textBox_S;
-        private System.Windows.Forms.TextBox textBox_Kind;
         private System.Windows.Forms.Button button_change;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_delete;
@@ -284,5 +284,6 @@
         private System.Windows.Forms.ComboBox comboBox_filtr;
         private System.Windows.Forms.TextBox textBox_filtr;
         private System.Windows.Forms.Button button_filtr;
+        private System.Windows.Forms.ComboBox textBox_Kind;
     }
 }

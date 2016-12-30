@@ -37,7 +37,6 @@
             this.textBox_id = new System.Windows.Forms.TextBox();
             this.textBox_fname = new System.Windows.Forms.TextBox();
             this.textBox_sname = new System.Windows.Forms.TextBox();
-            this.textBox_post = new System.Windows.Forms.TextBox();
             this.textBox_passport = new System.Windows.Forms.TextBox();
             this.textBox_phone = new System.Windows.Forms.TextBox();
             this.textBox_date = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.textBox_duties = new System.Windows.Forms.TextBox();
             this.button_change_duties = new System.Windows.Forms.Button();
             this.textBox_change_duties = new System.Windows.Forms.TextBox();
+            this.textBox_post = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -136,13 +136,6 @@
             this.textBox_sname.Name = "textBox_sname";
             this.textBox_sname.Size = new System.Drawing.Size(100, 20);
             this.textBox_sname.TabIndex = 8;
-            // 
-            // textBox_post
-            // 
-            this.textBox_post.Location = new System.Drawing.Point(505, 327);
-            this.textBox_post.Name = "textBox_post";
-            this.textBox_post.Size = new System.Drawing.Size(100, 20);
-            this.textBox_post.TabIndex = 9;
             // 
             // textBox_passport
             // 
@@ -305,11 +298,20 @@
             this.textBox_change_duties.Size = new System.Drawing.Size(119, 20);
             this.textBox_change_duties.TabIndex = 28;
             // 
+            // textBox_post
+            // 
+            this.textBox_post.FormattingEnabled = true;
+            this.textBox_post.Location = new System.Drawing.Point(505, 327);
+            this.textBox_post.Name = "textBox_post";
+            this.textBox_post.Size = new System.Drawing.Size(100, 21);
+            this.textBox_post.TabIndex = 9;
+            // 
             // Wards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 672);
+            this.Controls.Add(this.textBox_post);
             this.Controls.Add(this.textBox_change_duties);
             this.Controls.Add(this.button_change_duties);
             this.Controls.Add(this.textBox_duties);
@@ -329,7 +331,6 @@
             this.Controls.Add(this.textBox_date);
             this.Controls.Add(this.textBox_phone);
             this.Controls.Add(this.textBox_passport);
-            this.Controls.Add(this.textBox_post);
             this.Controls.Add(this.textBox_sname);
             this.Controls.Add(this.textBox_fname);
             this.Controls.Add(this.textBox_id);
@@ -362,7 +363,6 @@
         private System.Windows.Forms.TextBox textBox_id;
         private System.Windows.Forms.TextBox textBox_fname;
         private System.Windows.Forms.TextBox textBox_sname;
-        private System.Windows.Forms.TextBox textBox_post;
         private System.Windows.Forms.TextBox textBox_passport;
         private System.Windows.Forms.TextBox textBox_phone;
         private System.Windows.Forms.TextBox textBox_date;
@@ -382,5 +382,6 @@
         private System.Windows.Forms.TextBox textBox_duties;
         private System.Windows.Forms.Button button_change_duties;
         private System.Windows.Forms.TextBox textBox_change_duties;
+        private System.Windows.Forms.ComboBox textBox_post;
     }
 }

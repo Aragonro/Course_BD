@@ -17,6 +17,25 @@ namespace Course_BD
         public Cell_Add()
         {
             InitializeComponent();
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string zapros = "Select Distinct Kind From Cells ;";
+            SqlDataAdapter oda = new SqlDataAdapter(zapros, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            textBox_Kind.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                textBox_Kind.Items.Add(dt.Rows[i]["Kind"]);
+            }
+            zapros = "Select Distinct Cell From Good_Cells Where Cell Not In (Select Kind From Cells);";
+            oda = new SqlDataAdapter(zapros, sqlconn);
+            dt = new DataTable();
+            oda.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                textBox_Kind.Items.Add(dt.Rows[i]["Cell"]);
+            }
         }
 
         private void button_OK_Click(object sender, EventArgs e)

@@ -83,7 +83,7 @@
             this.Controls.Add(this.button_refresh);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Animals";
-            this.Text = "Animals";
+            this.Text = "Животные";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

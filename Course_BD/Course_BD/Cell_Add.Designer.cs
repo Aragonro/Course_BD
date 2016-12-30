@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_Kind = new System.Windows.Forms.TextBox();
             this.textBox_S = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,14 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_OK = new System.Windows.Forms.Button();
             this.button_Back = new System.Windows.Forms.Button();
+            this.textBox_Kind = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textBox_Kind
-            // 
-            this.textBox_Kind.Location = new System.Drawing.Point(104, 95);
-            this.textBox_Kind.Name = "textBox_Kind";
-            this.textBox_Kind.Size = new System.Drawing.Size(100, 20);
-            this.textBox_Kind.TabIndex = 13;
             // 
             // textBox_S
             // 
@@ -106,29 +99,35 @@
             this.button_Back.UseVisualStyleBackColor = true;
             this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
             // 
+            // textBox_Kind
+            // 
+            this.textBox_Kind.FormattingEnabled = true;
+            this.textBox_Kind.Location = new System.Drawing.Point(104, 95);
+            this.textBox_Kind.Name = "textBox_Kind";
+            this.textBox_Kind.Size = new System.Drawing.Size(100, 21);
+            this.textBox_Kind.TabIndex = 13;
+            // 
             // Cell_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(220, 262);
+            this.ClientSize = new System.Drawing.Size(277, 207);
+            this.Controls.Add(this.textBox_Kind);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.button_OK);
-            this.Controls.Add(this.textBox_Kind);
             this.Controls.Add(this.textBox_S);
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Cell_Add";
-            this.Text = "Cell_Add";
+            this.Text = "Добавление клетки";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox_Kind;
         private System.Windows.Forms.TextBox textBox_S;
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.Label label3;
@@ -136,5 +135,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_OK;
         private System.Windows.Forms.Button button_Back;
+        private System.Windows.Forms.ComboBox textBox_Kind;
     }
 }

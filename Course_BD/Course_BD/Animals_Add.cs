@@ -65,7 +65,11 @@ namespace Course_BD
                         for(int i = 1; i < comboBox_cell.Items.Count; ++i)
                         {
                             
-                            string zapros = "Select F=(Select Square From Cells Where Id="+comboBox_cell.Items[i]+"), S=Coalesce(Sum(Need_Square),0), G=(Select Count(Id) From Animals Where Number_Cell=" + comboBox_cell.Items[i] + ")-(Select Count(Id) From Animals Where Number_Cell=" + comboBox_cell.Items[i]+" And Kind=N'"+comboBox_kind.Text+"')  FROM Animals Where Number_Cell="+comboBox_cell.Items[i]+";";
+                            string zapros = "Select F=(Select Square From Cells Where Id="+
+                                comboBox_cell.Items[i]+"), S=Coalesce(Sum(Need_Square),0), G=(Select Count(Id)"+" From Animals Where Number_Cell="
+                                + comboBox_cell.Items[i] + ")-(Select Count(Id) From Animals Where Number_Cell="
+                                + comboBox_cell.Items[i]+" And Kind=N'"+
+                                comboBox_kind.Text+"')  FROM Animals Where Number_Cell="+comboBox_cell.Items[i]+";";
 
                             SqlDataAdapter oda = new SqlDataAdapter(zapros, sqlconn);
                             DataTable dt = new DataTable();

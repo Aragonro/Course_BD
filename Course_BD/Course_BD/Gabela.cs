@@ -94,7 +94,7 @@ namespace Course_BD
         {
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
-            string zapros = "Select Animals.Kind As 'Виды животных', Count(Id) As 'Количество животных данного вида' From Animals Group By Kind";
+            string zapros = "Select  Number_Cell As 'Номер клетки', Id As 'Код животного', Weight As 'Вес', Age As 'Возраст', Kind As 'Вид' From Animals Order By Number_Cell Asc";
             SqlDataAdapter oda = new SqlDataAdapter(zapros, sqlconn);
             DataSet dt = new DataSet();
 
@@ -154,6 +154,11 @@ namespace Course_BD
             doc.Close();
 
             MessageBox.Show("Pdf-документ сохранен");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

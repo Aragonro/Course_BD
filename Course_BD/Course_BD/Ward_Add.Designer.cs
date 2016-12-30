@@ -40,12 +40,12 @@
             this.textBox_id = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.textBox_sname = new System.Windows.Forms.TextBox();
-            this.textBox_post = new System.Windows.Forms.TextBox();
             this.textBox_pasport = new System.Windows.Forms.TextBox();
             this.textBox_date = new System.Windows.Forms.TextBox();
             this.textBox_phone = new System.Windows.Forms.TextBox();
             this.textBox_start_date = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
+            this.textBox_post = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -153,13 +153,6 @@
             this.textBox_sname.Size = new System.Drawing.Size(100, 20);
             this.textBox_sname.TabIndex = 11;
             // 
-            // textBox_post
-            // 
-            this.textBox_post.Location = new System.Drawing.Point(135, 105);
-            this.textBox_post.Name = "textBox_post";
-            this.textBox_post.Size = new System.Drawing.Size(100, 20);
-            this.textBox_post.TabIndex = 12;
-            // 
             // textBox_pasport
             // 
             this.textBox_pasport.Location = new System.Drawing.Point(135, 134);
@@ -198,17 +191,25 @@
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // textBox_post
+            // 
+            this.textBox_post.FormattingEnabled = true;
+            this.textBox_post.Location = new System.Drawing.Point(135, 101);
+            this.textBox_post.Name = "textBox_post";
+            this.textBox_post.Size = new System.Drawing.Size(100, 21);
+            this.textBox_post.TabIndex = 9;
+            // 
             // Ward_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 416);
+            this.Controls.Add(this.textBox_post);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.textBox_start_date);
             this.Controls.Add(this.textBox_phone);
             this.Controls.Add(this.textBox_date);
             this.Controls.Add(this.textBox_pasport);
-            this.Controls.Add(this.textBox_post);
             this.Controls.Add(this.textBox_sname);
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.textBox_id);
@@ -244,11 +245,11 @@
         private System.Windows.Forms.TextBox textBox_id;
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.TextBox textBox_sname;
-        private System.Windows.Forms.TextBox textBox_post;
         private System.Windows.Forms.TextBox textBox_pasport;
         private System.Windows.Forms.TextBox textBox_date;
         private System.Windows.Forms.TextBox textBox_phone;
         private System.Windows.Forms.TextBox textBox_start_date;
         private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.ComboBox textBox_post;
     }
 }

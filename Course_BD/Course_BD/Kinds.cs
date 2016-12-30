@@ -58,6 +58,41 @@ namespace Course_BD
             dt = new DataTable();
             oda.Fill(dt);
             dataGridView2.DataSource = dt;
+            zapros = "Select Distinct Cell FROM Good_Cells Where Cell Not In (Select Cell From Good_Cells Where Kind=N'" + comboBox_kinds.Text + "') ;";
+            oda = new SqlDataAdapter(zapros, sqlconn);
+            dt = new DataTable();
+            oda.Fill(dt);
+            textBox_add_cell.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                textBox_add_cell.Items.Add(dt.Rows[i]["Cell"]);
+            }
+            zapros = "Select Distinct Kind FROM Cells Where Kind Not In (Select Cell From Good_Cells);";
+            oda = new SqlDataAdapter(zapros, sqlconn);
+            dt = new DataTable();
+            oda.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                textBox_add_cell.Items.Add(dt.Rows[i]["Name"]);
+            }
+
+            zapros = "Select Distinct Friend FROM Friends Where Friend Not In (Select Friend From Friends Where Kind=N'" + comboBox_kinds.Text + "') ;";
+            oda = new SqlDataAdapter(zapros, sqlconn);
+            dt = new DataTable();
+            oda.Fill(dt);
+            textBox_add_kind.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                textBox_add_kind.Items.Add(dt.Rows[i]["Friend"]);
+            }
+            zapros = "Select Kind FROM Kinds_Animals Where Kind Not In (Select Friend From Friends);";
+            oda = new SqlDataAdapter(zapros, sqlconn);
+            dt = new DataTable();
+            oda.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                textBox_add_kind.Items.Add(dt.Rows[i]["Kind"]);
+            }
             sqlconn.Close();
         }
 
@@ -179,6 +214,11 @@ namespace Course_BD
                 MessageBox.Show(@"Error: " + ex.Message);
 
             }
+        }
+
+        private void comboBox_kinds_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

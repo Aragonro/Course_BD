@@ -74,6 +74,25 @@ namespace Course_BD
                     textBox_S.Text = Convert.ToString(dataGridView1[1, cur_row].Value);
                     textBox_Kind.Text = Convert.ToString(dataGridView1[2, cur_row].Value);
                 }
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string zapros = "Select Distinct Kind From Cells ;";
+                SqlDataAdapter oda = new SqlDataAdapter(zapros, sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                textBox_Kind.Items.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    textBox_Kind.Items.Add(dt.Rows[i]["Kind"]);
+                }
+                zapros = "Select Distinct Cell From Good_Cells Where Cell Not In (Select Kind From Cells);";
+                oda = new SqlDataAdapter(zapros, sqlconn);
+                dt = new DataTable();
+                oda.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    textBox_Kind.Items.Add(dt.Rows[i]["Cell"]);
+                }
             }
             catch (Exception ex)
             {

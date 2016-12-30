@@ -34,7 +34,7 @@ namespace Course_BD
             chart1.Series["Series1"].YValueMembers = (dt.Tables[0].Columns[1]).ToString();
 
             chart1.DataBind();
-            zapros = "Select Kinds_Animals.Kind , Count(Id) From Kinds_Animals, Animals Where Animals.Kind=Kinds_Animals.Kind Group By Kinds_Animals.Kind ";
+            zapros = "Select Kinds_Animals.Kind , Count(Id)  From Kinds_Animals, Animals Where Animals.Kind=Kinds_Animals.Kind Group By Kinds_Animals.Kind ";
             oda = new SqlDataAdapter(zapros, sqlconn);
             dt = new DataSet();
             oda.Fill(dt);
@@ -48,6 +48,11 @@ namespace Course_BD
             chart3.DataSource = dt;
             chart3.Series["Series1"].XValueMember = (dt.Tables[0].Columns[0]).ToString();
             chart3.Series["Series1"].YValueMembers = (dt.Tables[0].Columns[1]).ToString();
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
 
         }
     }
